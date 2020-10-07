@@ -6,6 +6,9 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 .max-width {
     max-width: 1300px;
@@ -56,7 +59,7 @@
 }
 
 .navbar .menu li a {
-    /* display: block; */
+    display: block;
     color: #fff;
     font-size: 18px;
     font-weight: 500;
@@ -78,6 +81,29 @@
     font-size: 23px;
     cursor: pointer;
     display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: crimson;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;    
+}
+.scroll-up-btn.show{
+    bottom: 10px;
+    opacity: 1;
+    pointer-events: auto; 
 }
 
 /* Estilo da home */
@@ -138,7 +164,7 @@
 section {
     padding: 100px 0;
 }
-.about, .services, .skills, .teams, .contact {
+.about, .services, .skills, .teams, .contact, footer {
     font-family: "Poppins", sans-serif;
 }
 .about .about-content,
@@ -207,7 +233,7 @@ section .title::after {
     margin-bottom: 10px;
 }
 
-.about .about-content .right .text spam {
+.about .about-content .right .text span {
     color: crimson;
 }
 
@@ -507,12 +533,19 @@ section .title::after {
     cursor: pointer;
 }
 
-
-
-
-
-
-
+/* FOOTER */
+footer{
+    background: #111;
+    padding: 20px 23px;
+    color: #fff;
+}
+footer span a{
+    color: crimson;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
 
 /* RESPONSIVIDADE */
 @media (max-width: 1300px) {
@@ -641,19 +674,22 @@ section .title::after {
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 375px) {
     .home .home-content .text-1 {
         font-size: 16px;
     }
 
     .home .home-content .text-2 {
-        font-size: 29px;
+        font-size: 25px;
     }
 
     .home .home-content .text-3 {
-        font-size: 23px;
+        font-size: 20px;
     }
     .services .title::after{
         font-size: 16px;
+    }
+    .contact .title::after{
+        font-size: 15px;
     }
 }
